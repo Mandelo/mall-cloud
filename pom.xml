@@ -10,33 +10,84 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mall-common</module>
-        <module>mall-service-provider/service-uac</module>
+        <module>uac-provider</module>
+        <module>uac-customer</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
         <spring-cloud-alibaba-dependencies.version>2.1.0.RELEASE</spring-cloud-alibaba-dependencies.version>
-        <lombok.version>1.16.18</lombok.version>
+        <lombok.version>1.18.16</lombok.version>
+        <mybatis-plus.version>3.4.2</mybatis-plus.version>
+        <swagger-starter-version>2.1.5-RELEASE</swagger-starter-version>
+        <hutool-version>5.4.7</hutool-version>
+        <mysql-version>8.0.22</mysql-version>
+        <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
     </properties>
+    <!-- 集中定义依赖，不引入 -->
+    <dependencyManagement>
+        <dependencies>
+            <!--springCloud Alibaba-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--spring-boot-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--mybatis-plus-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- swagger 依赖 -->
+            <dependency>
+                <groupId>com.battcn</groupId>
+                <artifactId>swagger-spring-boot-starter</artifactId>
+                <version>${swagger-starter-version}</version>
+            </dependency>
+            <!-- mysql 依赖 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-version}</version>
+            </dependency>
+            <!-- hutool 依赖 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
-    <dependencies>
-        <!--springCloud Alibaba-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-            <version>${spring-cloud-alibaba-dependencies.version}</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-
-        <!--lombok-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
-        </dependency>
-
-    </dependencies>
+    <!-- 集中定义项目所需插件 -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- spring boot maven 项目打包插件 -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
