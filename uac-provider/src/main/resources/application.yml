@@ -1,10 +1,10 @@
 spring:
   application:
-    name: nacos-provider
+    name: uac-provider
   cloud:
     nacos:
       discovery:
         server-addr: 192.168.50.148:8848
 
 server:
-  port: 8888
+  port: 9000

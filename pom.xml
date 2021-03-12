@@ -23,7 +23,8 @@
         <swagger-starter-version>2.1.5-RELEASE</swagger-starter-version>
         <hutool-version>5.4.7</hutool-version>
         <mysql-version>8.0.22</mysql-version>
-        <spring-boot.version>2.1.2.RELEASE</spring-boot.version>
+        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+        <openFeign.version>2.1.2.RELEASE</openFeign.version>
     </properties>
     <!-- 集中定义依赖，不引入 -->
     <dependencyManagement>
@@ -74,7 +75,14 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool-version}</version>
             </dependency>
+            <!-- 远程调用:2.0.0.RELEASE版本会导致服务注册到nacos上 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${openFeign.version}</version>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <!-- 集中定义项目所需插件 -->
