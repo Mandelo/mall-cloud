@@ -9,8 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>uac-customer</artifactId>
+    <artifactId>nacos-server</artifactId>
+
     <dependencies>
+        <!-- commons 公共项目 -->
+        <dependency>
+            <groupId>com.luoxiao</groupId>
+            <artifactId>shop-common</artifactId>
+        </dependency>
         <!--springboot-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -20,17 +26,6 @@
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-        <!--test-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <!-- 远程调用:2.0.0.RELEASE版本会导致服务注册到nacos上 -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
 

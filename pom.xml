@@ -10,8 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>mall-common</module>
-        <module>uac-provider</module>
+        <module>uac-service</module>
         <module>uac-customer</module>
+        <module>nacos-server</module>
     </modules>
 
     <properties>
@@ -25,6 +26,7 @@
         <mysql-version>8.0.22</mysql-version>
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
         <openFeign.version>2.1.2.RELEASE</openFeign.version>
+        <shop-common.version>1.0-SNAPSHOT</shop-common.version>
     </properties>
     <!-- 集中定义依赖，不引入 -->
     <dependencyManagement>
@@ -80,6 +82,12 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${openFeign.version}</version>
+            </dependency>
+            <!-- commons 公共项目 -->
+            <dependency>
+                <groupId>com.luoxiao</groupId>
+                <artifactId>shop-common</artifactId>
+                <version>${shop-common.version}</version>
             </dependency>
         </dependencies>
 
