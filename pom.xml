@@ -13,6 +13,7 @@
         <module>uac-service</module>
         <module>uac-customer</module>
         <module>nacos-server</module>
+        <module>oauth2-auth</module>
     </modules>
 
     <properties>
@@ -27,10 +28,19 @@
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
         <openFeign.version>2.1.2.RELEASE</openFeign.version>
         <shop-common.version>1.0-SNAPSHOT</shop-common.version>
+        <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
+        <spring-cloud-oauth2.version>2.2.4.RELEASE</spring-cloud-oauth2.version>
+        <spring-boot-starter-data-redis.version>2.4.3</spring-boot-starter-data-redis.version>
     </properties>
     <!-- 集中定义依赖，不引入 -->
     <dependencyManagement>
         <dependencies>
+            <!-- commons 公共项目 -->
+            <dependency>
+                <groupId>com.luoxiao</groupId>
+                <artifactId>shop-common</artifactId>
+                <version>${shop-common.version}</version>
+            </dependency>
             <!--springCloud Alibaba-->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -83,11 +93,29 @@
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>${openFeign.version}</version>
             </dependency>
-            <!-- commons 公共项目 -->
+            <!--spring security-->
             <dependency>
-                <groupId>com.luoxiao</groupId>
-                <artifactId>shop-common</artifactId>
-                <version>${shop-common.version}</version>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <!--auth2-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-oauth2</artifactId>
+                <version>${spring-cloud-oauth2.version}</version>
+            </dependency>
+            <!--jwt tool-->
+            <dependency>
+                <groupId>com.nimbusds</groupId>
+                <artifactId>nimbus-jose-jwt</artifactId>
+                <version>${nimbus-jose-jwt.version}</version>
+            </dependency>
+            <!--redis-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-redis</artifactId>
+                <version>${spring-boot-starter-data-redis.version}</version>
             </dependency>
         </dependencies>
 

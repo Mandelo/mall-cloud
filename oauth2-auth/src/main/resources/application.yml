@@ -1,0 +1,16 @@
+server:
+  port: 7000
+
+spring:
+  application:
+    name: oauth2-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+  redis:
+    database: 0
+    port: 6379
+    host: localhost
+    password:
