@@ -1,6 +1,8 @@
 package com.luoxiao.dto;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @description:
@@ -9,6 +11,8 @@ import lombok.Data;
  */
 
 @Data
+@EqualsAndHashCode(callSuper = false)
+@Builder
 public class Oauth2TokenDto {
 
     /**
