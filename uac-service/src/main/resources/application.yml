@@ -7,4 +7,4 @@ spring:
         server-addr: localhost:8848 #注册中心地址
 
 server:
-  port: 9100
+  port: 9200

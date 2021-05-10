@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.50.148:8848
+        server-addr: localhost:8848
 
 server:
   port: 9000
