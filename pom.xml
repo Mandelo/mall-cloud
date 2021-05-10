@@ -26,6 +26,7 @@
         <hutool-version>5.4.7</hutool-version>
         <mysql-version>8.0.22</mysql-version>
         <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
+        <spring-security.version>5.3.5.RELEASE</spring-security.version>
         <openFeign.version>2.1.2.RELEASE</openFeign.version>
         <shop-common.version>1.0-SNAPSHOT</shop-common.version>
         <nimbus-jose-jwt.version>8.16</nimbus-jose-jwt.version>
@@ -98,6 +99,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-security</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-core</artifactId>
+                <version>${spring-security.version}</version>
             </dependency>
             <!--auth2-->
             <dependency>

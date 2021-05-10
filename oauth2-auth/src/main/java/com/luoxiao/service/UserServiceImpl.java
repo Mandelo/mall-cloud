@@ -1,8 +1,8 @@
 package com.luoxiao.service;
 
 import cn.hutool.core.collection.CollUtil;
-import com.luoxiao.dto.SecurityUser;
-import com.luoxiao.dto.UserDTO;
+import com.luoxiao.domain.SecurityUser;
+import com.luoxiao.domain.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.CredentialsExpiredException;

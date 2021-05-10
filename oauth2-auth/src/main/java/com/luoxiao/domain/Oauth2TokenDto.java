@@ -1,4 +1,4 @@
-package com.luoxiao.dto;
+package com.luoxiao.domain;
 
 import lombok.Builder;
 import lombok.Data;

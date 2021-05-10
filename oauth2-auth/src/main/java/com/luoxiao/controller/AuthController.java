@@ -1,6 +1,6 @@
 package com.luoxiao.controller;
 
-import com.luoxiao.dto.Oauth2TokenDto;
+import com.luoxiao.domain.Oauth2TokenDto;
 import com.luoxiao.result.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
